@@ -7,7 +7,7 @@ venom
 
 function start(client) {
   client.onMessage((nome) => {
-    if (nome.body === 'Oi' || nome.body === 'Olá') {
+    if (nome.body === 'Oi' || nome.body === 'Ola') {
       client
         .sendText(nome.from, 'Olá, bom dia, Por favor Insira seu no Campo de texto')
         .then((result) => {
