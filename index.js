@@ -4,25 +4,6 @@ venom
   .create()
   .then((client) => start(client));
 
-//   venom.create('support').then((_supportClient) => { });
-
-//   venom
-//   .create({
-   
-//       WABrowserId: '"UnXjH....."',
-//       WASecretBundle:
-//         '{"key":"+i/nRgWJ....","encKey":"kGdMR5t....","macKey":"+i/nRgW...."}',
-//       WAToken1: '"0i8...."',
-//       WAToken2: '"1@lPpzwC...."',
-
-//     multidevice: false // for version not multidevice use false.(default: true)
-//   })
-//   .then((client) => start(client))
-//   .catch((erro) => {
-//     console.log(erro);
-    
-//   });
-
 function start(client) {
   client.onMessage((messageInfo) => {
      console.log(messageInfo)
