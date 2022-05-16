@@ -18,12 +18,9 @@ function start(client) {
         .then(resp => console.log('Enviado:', resp))
         .catch(err => console.log(err))
      }
-     
-   
   });
 
 }
-
 
 function start(client) {
    client.onMessage((messageInfo) => {
