@@ -19,7 +19,6 @@ function start(client) {
         .catch(err => console.log(err))
      }
      
-   
   });
 
 }
