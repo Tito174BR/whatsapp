@@ -3,7 +3,25 @@ const venom = require('venom-bot');
 venom
   .create()
   .then((client) => start(client));
-//   .then((cpf) => start(cpf)); //erro nessa linha que eu não lembro como corrige 🤡
+
+//   venom.create('support').then((_supportClient) => { });
+
+//   venom
+//   .create({
+   
+//       WABrowserId: '"UnXjH....."',
+//       WASecretBundle:
+//         '{"key":"+i/nRgWJ....","encKey":"kGdMR5t....","macKey":"+i/nRgW...."}',
+//       WAToken1: '"0i8...."',
+//       WAToken2: '"1@lPpzwC...."',
+
+//     multidevice: false // for version not multidevice use false.(default: true)
+//   })
+//   .then((client) => start(client))
+//   .catch((erro) => {
+//     console.log(erro);
+    
+//   });
 
 function start(client) {
   client.onMessage((messageInfo) => {
@@ -62,16 +80,41 @@ function start(client) {
 
 
 
-// inutilizaveis :
-//  if (nome.body === 'Oi' || nome.body === 'Ola') {
-      
-   //      .then((result) => {
-   //        console.log('Result: ', result); //retorna um objeto de successo
-   //      })
-   //      .catch((erro) => {
-   //        console.error('Erro ao enviar mensagem: ', erro); //return um objeto de erro
-   //      });
-   //  }
-   //  else {  
-   //     'Erro, não entendi o que você escreveu, pode reescrever por favor?' // objeto de retorno para caso seja qualquer outra coisa difernte de "Oi" ou "ola"
-   //  }
+const button = [
+   {
+     title: "Pasta",
+     rows: [
+       {
+         title: "Ravioli Lasagna",
+         description: "Made with layers of frozen cheese",
+       }
+     ]
+   },
+   {
+     title: "Dessert",
+     rows: [
+       {
+         title: "Baked Ricotta Cake",
+         description: "Sweets pecan baklava rolls",
+       },
+       {
+         title: "Lemon Meringue Pie",
+         description: "Pastry filled with lemonand meringue.",
+       }
+     ]
+   }
+ ];
+
+// Send Messages with Buttons Reply
+const list = [
+ {
+   "buttonText": {
+     "displayText": "Text of Button 1"
+     }
+   },
+ {
+   "buttonText": {
+     "displayText": "Text of Button 2"
+     }
+   }
+ ]
