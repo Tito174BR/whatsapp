@@ -3,9 +3,18 @@ const venom = require('venom-bot');
 venom
   .create()
   .then((client) => start(client));
+  venom
+  .create()
+  .then((client) => cpf(client));
+  venom
+  .create()
+  .then((client) => cnpj(client));
+  console.log(start),
+  console.log(cpf),
+  console.log(cnpj)
 
 function start(client) {
-  client.onMessage((messageInfo) => {
+  client.onMessage(async (messageInfo) => {
      console.log(messageInfo)
      if (messageInfo.body === 'Ola' || messageInfo.body === 'Oi') {
         console.log('Boa papai!')
@@ -24,7 +33,7 @@ function start(client) {
 }
 
 
-function start(client) {
+function cpf(client) {
    client.onMessage((messageInfo) => {
       console.log(messageInfo)
       if (messageInfo.body === 'cpf' || messageInfo.body === 'CPF') {
@@ -34,14 +43,14 @@ function start(client) {
          .catch(err => console.log(err))
       } else {
          console.log('Nâo entendi papai.')
-         client.sendText(messageInfo.from, 'Não entendi o que você escreveu, reescreva por favor!')
+         client.sendText(cpf.from, 'Não entendi o que você escreveu, reescreva por favor!')
          .then(resp => console.log('Enviado:', resp))
          .catch(err => console.log(err))
       }
    });
 }
 
-function start(client) {
+function cnpj(client) {
    client.onMessage((messageInfo) => {
       console.log(messageInfo)
       if (messageInfo.body === 'cnpj' || messageInfo.body === 'CNPJ') {
@@ -51,7 +60,7 @@ function start(client) {
          .catch(err => console.log(err))
       } else {
          console.log('Nâo entendi papai.')
-         client.sendText(messageInfo.from, 'Não entendi o que você escreveu, reescreva por favor!')
+         client.sendText(cnpj.from, 'Não entendi o que você escreveu, reescreva por favor!')
          .then(resp => console.log('Enviado:', resp))
          .catch(err => console.log(err))
       }
@@ -60,41 +69,4 @@ function start(client) {
 
 
 
-const button = [
-   {
-     title: "Pasta",
-     rows: [
-       {
-         title: "Ravioli Lasagna",
-         description: "Made with layers of frozen cheese",
-       }
-     ]
-   },
-   {
-     title: "Dessert",
-     rows: [
-       {
-         title: "Baked Ricotta Cake",
-         description: "Sweets pecan baklava rolls",
-       },
-       {
-         title: "Lemon Meringue Pie",
-         description: "Pastry filled with lemonand meringue.",
-       }
-     ]
-   }
- ];
 
-// Send Messages with Buttons Reply
-const list = [
- {
-   "buttonText": {
-     "displayText": "Text of Button 1"
-     }
-   },
- {
-   "buttonText": {
-     "displayText": "Text of Button 2"
-     }
-   }
- ]
