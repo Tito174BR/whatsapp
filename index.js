@@ -3,6 +3,7 @@ const venom = require('venom-bot');
 venom
   .create()
   .then((client) => start(client));
+//   venom.create('supportClient').then((supportClient) => { });
 
 
 function start(client) {
@@ -15,7 +16,8 @@ function start(client) {
         .catch(err => console.log(err))
      } else {
         console.log('Nâo entendi papai.')
-        client.sendText(messageInfo.from, 'Não entendi o que você escreveu, reescreva por favor!')
+        client.reply(messageInfo.from,"Não entendi o que você escreveu, reescreva por favor!").then((result) => {console.log('Result: ', result);}).catch((erro) => {console.error('Erro ao enviar: ', erro);  });
+        client.send(messageInfo.from, 'Não entendi o que você escreveu, reescreva por favor!')
         .then(resp => console.log('Enviado:', resp))
         .catch(err => console.log(err))
      }
@@ -23,8 +25,6 @@ function start(client) {
   });
 
 }
-
-
 
 
 
